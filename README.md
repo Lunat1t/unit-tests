@@ -42,3 +42,10 @@ python3 -m venv .venv
 Trace Viewer: `.venv/bin/python -m playwright show-trace путь/к/trace.zip` (в Windows используйте свой путь к python.exe).
 
 requirements.txt закрепляет основные версии; requirements-observed.txt содержит полный список пакетов фактической проверочной среды, включая вспомогательный PyYAML. Ваша версия Python может отличаться от среды проверки.
+
+## GitHub Actions
+Загрузите содержимое этой папки в корень репозитория, включая скрытый каталог .github. Не загружайте папки .venv, evidence, __pycache__ и временные отчёты. Готовая ветка: codex/lab8-lab9-playwright; PR: https://github.com/Lunat1t/unit-tests/pull/1
+
+Workflow устанавливает Python 3.11, зависимости и Chromium; сам запускает HTTP-сервер, проверяет доступность страницы и останавливает сервер после тестов. Артефакт ui-test-results содержит report.xml, server.log и материалы падений (когда они есть).
+
+Для самостоятельного задания: создайте ветку codex/readme-example от учебной ветки, добавьте безопасное предложение в README, отправьте ветку и откройте PR. Сохраните результаты проверки pull_request. Основной учебный PR уже содержит изменение README относительно main и запускается по pull_request.
